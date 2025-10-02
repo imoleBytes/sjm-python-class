@@ -1,0 +1,10 @@
+jide,desktop,17
+james,web,10
+peter,design,20
+bolu,python,34
+esther,web,12
+praise,desktop,2
+peter,design,20
+bolu,python,34
+esther,web,12
+praise,desktop,2
