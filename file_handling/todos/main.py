@@ -30,13 +30,15 @@ tasks = [
     {"title": "go to a friend's place", "done": "False"}  
 ] 
 
+
 selections = """
     1.  Show Tasks
     2.  Add a Task
     3.  Edit a Task
-    4.  Toggle Completion of a Task
-    5.  Delete a Task
-    6.  Quit
+    4.  Complete a Task
+    5.  Un-complete a task
+    6.  Delete a Task
+    7.  Quit
 Select (1 - 6): """
 while True:
     choice = input(selections)
@@ -60,14 +62,23 @@ while True:
                 print("editted successfully!")
                 break
             except:
-                print("enter a valid number")      
-        
-        ...
+                print("enter a valid number")              
     elif choice == "4":
-        ...
+        task_num = int(input(f"Select a Task to complete: (1-{len(tasks)}): "))
+        done = tasks[task_num-1]["done"]
+        if done == "False":
+            tasks[task_num-1]["done"] = "True"
+            print("Task completed successfully!")
+        else:
+            print("Task has already been done!")
     elif choice == "5":
         ...
     elif choice == "6":
+        task_num = int(input(f"Select Task to delete: (1-{len(tasks)}): "))
+        tasks.pop(task_num-1)
+        print(f"Task {task_num} deleted!!")
+      
+    elif choice == "7":
         print("Thank you for using this Program")
         exit()
     else:
