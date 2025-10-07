@@ -1,0 +1,4 @@
+do yoga,True
+go to the movies,True
+go to shrine,True
+read some books,False

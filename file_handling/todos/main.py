@@ -21,14 +21,29 @@ Tasks
 - Quit
 """
 
-tasks = [
-    {"title": "go to the movies", "done": "True"}, 
-    {"title": "wash clothes", "done": "False"},
-      {"title": "do laundry", "done": "True"}, 
-    {"title": "wash the house", "done": "False"},
-      {"title": "go to the church", "done": "True"}, 
-    {"title": "go to a friend's place", "done": "False"}  
-] 
+def persistDATA(tasks):
+    f = open("tasks.txt", "w")
+    for task in tasks:
+        line = f"{task["title"]},{task["done"]}\n"
+        f.write(line)    
+    
+    f.close()
+
+
+def populateTasks():
+    tasks = []
+    f = open("tasks.txt") 
+    for line in f.readlines():
+        title, done = line.split(",")
+        done = done.strip("\n")
+        task = {"title": title, "done": done}
+        tasks.append(task)      
+
+       
+    f.close()
+    return tasks
+
+tasks = populateTasks()
 
 
 selections = """
@@ -51,6 +66,7 @@ while True:
         task_title = input("Add a task: ")
         task = {"title": task_title, "done": "False"}
         tasks.append(task)
+        persistDATA(tasks)
         print("Tasks added successfully!")
     elif choice == "3":
         while True:
@@ -59,6 +75,7 @@ while True:
                 t = tasks[task_num-1]["title"]
                 new = input(f"Change this: [{t}] to: ")
                 tasks[task_num-1]["title"] = new
+                persistDATA(tasks)
                 print("editted successfully!")
                 break
             except:
@@ -69,19 +86,25 @@ while True:
         if done == "False":
             tasks[task_num-1]["done"] = "True"
             print("Task completed successfully!")
+            persistDATA(tasks)
         else:
             print("Task has already been done!")
     elif choice == "5":
+        task_num = int(input(f"Select a Task to uncomplete: (1-{len(tasks)}): "))        
+        tasks[task_num-1]["done"] = "False"
+        persistDATA(tasks)
+        print("Task uncompleted successfully!")
         ...
     elif choice == "6":
         task_num = int(input(f"Select Task to delete: (1-{len(tasks)}): "))
         tasks.pop(task_num-1)
+        persistDATA(tasks)
         print(f"Task {task_num} deleted!!")
       
     elif choice == "7":
         print("Thank you for using this Program")
         exit()
     else:
-        print("Invalid choic,please choose betwwen 1 - 6")
+        print("Invalid choice, please choose betwwen 1 - 6")
         
     
