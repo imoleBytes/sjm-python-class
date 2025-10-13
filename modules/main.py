@@ -1,5 +1,8 @@
 # MODULESS AND LIBRARY
 import math
+import bcrypt
+
+# print(str(bcrypt.hashpw(bytes("hello","ascii"), "smsr")))
 # print(4*3*2*1)
 # print(math.factorial(10))
 
@@ -25,26 +28,26 @@ import math
 # import random
 # import sys
 
-import time
+# import time
 
 # print()
 
-while True:
-    tm = time.asctime()
-    print(tm.split(" ")[4])
-    time.sleep(1)
-# names = ["Jide", "Paul", "James", "Bolu", "Imole"]
-# # print(random.choice(names))
+# while True:
+#     tm = time.asctime()
+#     print(tm.split(" ")[3])
+#     time.sleep(1)
+# # names = ["Jide", "Paul", "James", "Bolu", "Imole"]
+# # # print(random.choice(names))
 
-# for i in range(5):
-#     if i < 2:
-#         time.sleep(1)
-#     print(names[i])
+# # for i in range(5):
+# #     if i < 2:
+# #         time.sleep(1)
+# #     print(names[i])
 
-# print("processing..")
-# time.sleep(1)
-# print("..")
-# time.sleep(1)
-# print("..")
-# time.sleep(1)
-# print("..")
+# # print("processing..")
+# # time.sleep(1)
+# # print("..")
+# # time.sleep(1)
+# # print("..")
+# # time.sleep(1)
+# # print("..")
