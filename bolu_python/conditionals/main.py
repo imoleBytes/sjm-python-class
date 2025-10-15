@@ -10,7 +10,7 @@ else:
     print("Sorry o, you are not old enough")
 print("end")
 
-
+ 
 # build a program that will take either any of sunny, rainy, cloudy, clear
 # and then print out a msg that associated with it
 # and then when a value that is not any of those weather conditions
