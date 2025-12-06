@@ -43,14 +43,7 @@ def populateTasks():
     return tsks
 
 
-def persisData(tasks):
-    # [
-    #     {"todo": "go to the movies", "done": False},
-    #     {"todo": "do laundry", "done": False},
-    #     {"todo": "read some books", "done": False},
-    #     {"todo": "go to the gym", "done": False}
-    # ]
-    
+def persisData(tasks):   
     f = open("db.csv", "w")
     for i in tasks:
         done_val = 0
